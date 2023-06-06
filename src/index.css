@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.gutter.gutter-horizontal {
+  cursor: col-resize;
+}
