@@ -1,10 +1,8 @@
 // import { IconButton } from '@chakra-ui/react';
 import { Link, useLocation } from 'react-router-dom';
 import { CSSProperties, ReactElement } from 'react';
-import ContactIcon from '../icons/ContactIcon';
 import Theme from '../../constants/Theme';
-import PagesIcon from '../icons/PagesIcon';
-import SettingsIcon from '../icons/SettingsIcon';
+import { EmailIcon, PagesIcon, SettingsIcon } from '../icons';
 
 interface SidebarIcon {
   Icon: () => ReactElement,
@@ -17,15 +15,11 @@ const sidebarTopItems: SidebarIcon[] = [
     path: '/',
   },
   {
-    Icon: () => <ContactIcon />,
+    Icon: () => <EmailIcon />,
     path: '/contact',
   },
 ];
 const sidebarBottomItems: SidebarIcon[] = [
-  {
-    Icon: () => <ContactIcon />,
-    path: '/',
-  },
   {
     Icon: () => <SettingsIcon />,
     path: '/settings',

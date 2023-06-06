@@ -5,7 +5,7 @@ function SplitView() {
   return (
     <Split
       className="flex flex-1"
-      gutterStyle={() => ({ width: '5px', backgroundColor: Theme.COLORS.PRIMARY })}
+      gutterStyle={() => ({ width: '2px', backgroundColor: Theme.COLORS.BORDER })}
       sizes={[20, 80]}
     >
       <div
