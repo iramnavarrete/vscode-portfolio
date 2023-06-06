@@ -1,4 +1,3 @@
-// import { IconButton } from '@chakra-ui/react';
 import { Link, useLocation } from 'react-router-dom';
 import { CSSProperties, ReactElement } from 'react';
 import Theme from '../../constants/Theme';
@@ -32,9 +31,9 @@ function Sidebar(): ReactElement {
   const activeStyles = (path: string): CSSProperties => {
     if (pathname === path) {
       return {
-        borderLeftColor: Theme.COLORS.ACCENT_COLOR,
+        borderLeftColor: Theme.colors.accentColor,
         borderLeftWidth: 2,
-        backgroundColor: Theme.COLORS.ACTIVE_SIDEBAR,
+        backgroundColor: Theme.colors.activeSidebar,
       };
     }
     return {};
@@ -45,6 +44,7 @@ function Sidebar(): ReactElement {
       {iconList.map(({ Icon, path }) => (
         <Link
           style={activeStyles(path)}
+          className={`${pathname === path ? 'bg-activeSidebar border-l-2 bg-activeSidebar' : ''}`}
           to={path}
           key={path}
         >
@@ -57,7 +57,7 @@ function Sidebar(): ReactElement {
   );
 
   return (
-    <aside className="flex flex-col justify-between" style={{ backgroundColor: Theme.COLORS.PRIMARY, minWidth: '65px' }}>
+    <aside className="flex flex-col justify-between bg-primary min-w-[65px]">
       {renderIconsList(sidebarTopItems)}
       {renderIconsList(sidebarBottomItems)}
     </aside>

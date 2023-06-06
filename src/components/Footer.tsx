@@ -1,10 +1,9 @@
 import { ReactElement } from 'react';
 import { GitBranchIcon } from './icons';
-import Theme from '../constants/Theme';
 
 function Footer(): ReactElement {
   return (
-    <footer className="px-2 h-6 flex flex-col content-between" style={{ backgroundColor: Theme.COLORS.PRIMARY, borderColor: Theme.COLORS.BORDER }}>
+    <footer className="px-2 h-6 flex flex-col content-between bg-primary">
       <a
         href="https://github.com/iramnavarrete/vscode-portfolio"
         target="_blank"
