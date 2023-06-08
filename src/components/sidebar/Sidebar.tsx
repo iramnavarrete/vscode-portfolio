@@ -1,14 +1,13 @@
 import { Link, useLocation } from 'react-router-dom';
-import { CSSProperties, ReactElement } from 'react';
-import Theme from '../../constants/Theme';
+import { ReactElement } from 'react';
 import { EmailIcon, PagesIcon, SettingsIcon } from '../icons';
 
-interface SidebarIcon {
+interface SidebarItem {
   Icon: () => ReactElement,
   path: string
 }
 
-const sidebarTopItems: SidebarIcon[] = [
+const sidebarTopItems: SidebarItem[] = [
   {
     Icon: () => <PagesIcon />,
     path: '/',
@@ -18,7 +17,7 @@ const sidebarTopItems: SidebarIcon[] = [
     path: '/contact',
   },
 ];
-const sidebarBottomItems: SidebarIcon[] = [
+const sidebarBottomItems: SidebarItem[] = [
   {
     Icon: () => <SettingsIcon />,
     path: '/settings',
@@ -28,23 +27,11 @@ const sidebarBottomItems: SidebarIcon[] = [
 function Sidebar(): ReactElement {
   const { pathname } = useLocation();
 
-  const activeStyles = (path: string): CSSProperties => {
-    if (pathname === path) {
-      return {
-        borderLeftColor: Theme.colors.accentColor,
-        borderLeftWidth: 2,
-        backgroundColor: Theme.colors.activeSidebar,
-      };
-    }
-    return {};
-  };
-
-  const renderIconsList = (iconList: SidebarIcon[]): ReactElement => (
+  const renderIconsList = (iconList: SidebarItem[]): ReactElement => (
     <div className="flex flex-col">
       {iconList.map(({ Icon, path }) => (
         <Link
-          style={activeStyles(path)}
-          className={`${pathname === path ? 'bg-activeSidebar border-l-2 bg-activeSidebar' : ''}`}
+          className={`${pathname === path ? 'bg-active-sidebar border-l-2 bg-active-sidebar border-accent' : ''}`}
           to={path}
           key={path}
         >
