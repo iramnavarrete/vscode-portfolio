@@ -75,7 +75,7 @@ function Footer(): ReactElement {
       if (!toast.isActive(id)) {
         toast({
           id,
-          duration: 19000,
+          duration: 9000,
           render: () => (
             <NotificationToast
               closeToast={() => toast.close(id)}
