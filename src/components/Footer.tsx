@@ -1,7 +1,8 @@
 import { ReactElement, useState } from 'react';
 import { Box, useToast } from '@chakra-ui/react';
 import {
-  CoffeeIcon, DoubleCheckIcon, GitBranchIcon, NotificationsIcon,
+  ChakraUIIcon,
+  CoffeeIcon, DoubleCheckIcon, GitBranchIcon, NotificationsIcon, TailwindIcon,
 } from './icons';
 import NotificationToast from './NotificationToast';
 
@@ -41,14 +42,28 @@ const footerLeftItems: FooterItem[] = [
 const footerRightItems: FooterItem[] = [
   {
     id: 0,
-    text: 'Prettier',
-    Icon: () => <DoubleCheckIcon size={15} />,
+    text: 'Tailwind CSS',
+    Icon: () => <TailwindIcon size={18} />,
     action: 'go-to-url',
-    url: 'https://github.com/iramnavarrete/vscode-portfolio',
+    url: 'https://tailwindcss.com/',
+  },
+  {
+    id: 1,
+    text: 'Chakra UI',
+    Icon: () => <ChakraUIIcon size={18} />,
+    action: 'go-to-url',
+    url: 'https://chakra-ui.com/',
+  },
+  {
+    id: 2,
+    text: 'Prettier',
+    Icon: () => <DoubleCheckIcon size={18} />,
+    action: 'go-to-url',
+    url: 'https://prettier.io/',
   },
   {
     id: NOTIFICATION_ICON_ID,
-    Icon: () => <NotificationsIcon size={15} />,
+    Icon: () => <NotificationsIcon size={18} />,
     action: 'none',
   },
 ];
