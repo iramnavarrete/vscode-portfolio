@@ -1,7 +1,9 @@
-import { ReactElement } from 'react';
+import { ReactElement, useState } from 'react';
+import { Box, useToast } from '@chakra-ui/react';
 import {
   CoffeeIcon, DoubleCheckIcon, GitBranchIcon, NotificationsIcon,
 } from './icons';
+import NotificationToast from './NotificationToast';
 
 interface FooterItem {
   id: number,
@@ -10,6 +12,14 @@ interface FooterItem {
   action: 'none' | 'go-to-url',
   url?: string
 }
+
+interface Notification {
+  id: number,
+  title?: string,
+  description?: string
+}
+
+const NOTIFICATION_ICON_ID = 10000;
 
 const footerLeftItems: FooterItem[] = [
   {
@@ -37,13 +47,49 @@ const footerRightItems: FooterItem[] = [
     url: 'https://github.com/iramnavarrete/vscode-portfolio',
   },
   {
-    id: 1,
+    id: NOTIFICATION_ICON_ID,
     Icon: () => <NotificationsIcon size={15} />,
     action: 'none',
   },
 ];
 
+const toastsList: Notification[] = [
+  {
+    id: 1,
+    title: 'Toast 1',
+    description: 'Hola soy la notificacion 1',
+  },
+  {
+    id: 2,
+    title: 'Toast 2',
+    description: 'Hola soy la notificación 2',
+  },
+];
+
 function Footer(): ReactElement {
+  const toast = useToast();
+
+  const showToasts = () => {
+    for (let i = 0; i < toastsList.length; i += 1) {
+      const { id, description, title } = toastsList[i];
+      if (!toast.isActive(id)) {
+        toast({
+          id,
+          duration: 19000,
+          render: () => (
+            <NotificationToast
+              closeToast={() => toast.close(id)}
+              title={title || ''}
+              description={description || ''}
+            />
+          ),
+          // Le colocamos margen al toast del fondo
+          containerStyle: { marginBottom: i === toastsList.length - 1 ? 10 : 2, backgroundColor: 'red' },
+        });
+      }
+    }
+  };
+
   const renderItemsList = (itemsList: FooterItem[]): ReactElement => (
     <>
       {itemsList.map(({
@@ -55,6 +101,11 @@ function Footer(): ReactElement {
           target={`${action !== 'none' && url ? '_blank' : '_self'}`}
           className=" mx-2 px-2 flex flex-row items-center w-max hover:bg-accent"
           rel="noreferrer"
+          onClick={() => {
+            if (id === NOTIFICATION_ICON_ID) {
+              showToasts();
+            }
+          }}
         >
           <Icon />
           {text && <p className="text-white text-sm pl-1">{text}</p>}

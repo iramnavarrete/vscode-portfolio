@@ -6,7 +6,14 @@ import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <ChakraProvider>
+    <ChakraProvider
+      toastOptions={{
+        defaultOptions: {
+          position: 'bottom-right',
+          variant: 'solid',
+        },
+      }}
+    >
       <App />
     </ChakraProvider>
   </React.StrictMode>,
