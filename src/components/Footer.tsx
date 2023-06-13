@@ -1,8 +1,14 @@
-import { ReactElement, useState } from 'react';
+import { ReactElement } from 'react';
 import { Box, useToast } from '@chakra-ui/react';
 import {
   ChakraUIIcon,
-  CoffeeIcon, DoubleCheckIcon, GitBranchIcon, NotificationsIcon, TailwindIcon,
+  CoffeeIcon,
+  DoubleCheckIcon,
+  ErrorIcon,
+  GitBranchIcon,
+  NotificationsIcon,
+  TailwindIcon,
+  WarningIcon,
 } from './icons';
 import NotificationToast from './NotificationToast';
 
@@ -11,7 +17,9 @@ interface FooterItem {
   text?: string,
   Icon: () => ReactElement,
   action: 'none' | 'go-to-url',
-  url?: string
+  url?: string,
+  secondText?: string,
+  SecondIcon?: () => ReactElement
 }
 
 interface Notification {
@@ -34,8 +42,16 @@ const footerLeftItems: FooterItem[] = [
     id: 1,
     text: 'Buy me a coffee',
     Icon: () => <CoffeeIcon size={15} />,
+    action: 'go-to-url',
+    url: 'https://www.paypal.com',
+  },
+  {
+    id: 2,
+    text: '0',
+    Icon: () => <ErrorIcon size={15} />,
     action: 'none',
-    url: 'https://github.com/iramnavarrete/vscode',
+    SecondIcon: () => <WarningIcon size={15} />,
+    secondText: '0',
   },
 ];
 
@@ -108,13 +124,13 @@ function Footer(): ReactElement {
   const renderItemsList = (itemsList: FooterItem[]): ReactElement => (
     <>
       {itemsList.map(({
-        Icon, id, url, text, action,
+        Icon, id, url, text, action, SecondIcon, secondText,
       }) => (
         <a
           key={`footer-item-${id}`}
           href={`${action !== 'none' && url ? url : '#'}`}
           target={`${action !== 'none' && url ? '_blank' : '_self'}`}
-          className=" mx-2 px-2 flex flex-row items-center w-max hover:bg-accent"
+          className=" mx-2 px-2 flex flex-row w-max hover:bg-accent text-white text-sm"
           rel="noreferrer"
           onClick={() => {
             if (id === NOTIFICATION_ICON_ID) {
@@ -122,15 +138,24 @@ function Footer(): ReactElement {
             }
           }}
         >
-          <Icon />
-          {text && <p className="text-white text-sm pl-1">{text}</p>}
+          <Box className="flex flex-row items-center">
+            <Icon />
+            {text && <p className="pl-1">{text}</p>}
+          </Box>
+          {SecondIcon
+            && (
+            <Box className="flex flex-row ml-2 items-center">
+              <SecondIcon />
+              {secondText && <p className="pl-1">{secondText}</p>}
+            </Box>
+            )}
         </a>
       ))}
     </>
   );
 
   return (
-    <footer className="px-2 h-6 flex flex-row content-between bg-primary">
+    <footer className="px-2 min-h-6 flex flex-row flex-wrap content-between bg-primary">
       <div className="flex flex-grow">
         {renderItemsList(footerLeftItems)}
       </div>

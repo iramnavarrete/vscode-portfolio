@@ -1,5 +1,7 @@
 import Split from 'react-split';
+import { Box } from '@chakra-ui/react';
 import Theme from '../../constants/Theme';
+import Explorer from '../Explorer';
 
 function SplitView() {
   return (
@@ -8,12 +10,8 @@ function SplitView() {
       gutterStyle={() => ({ width: '2px', backgroundColor: Theme.colors.border })}
       sizes={[20, 80]}
     >
-      <div
-        className="border-l-2 bg-primary border-border"
-      >
-        Hola
-      </div>
-      <div className="flex flex-1 bg-secondary">Hola</div>
+      <Explorer />
+      <Box className="flex flex-1 bg-secondary">Hola</Box>
     </Split>
   );
 }
