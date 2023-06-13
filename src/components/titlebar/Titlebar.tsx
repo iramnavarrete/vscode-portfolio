@@ -11,8 +11,6 @@ const titleItems: TitleItem[] = [
   { id: 1, text: 'Edit' },
   { id: 2, text: 'View' },
   { id: 3, text: 'Go' },
-  { id: 4, text: 'Run' },
-  { id: 5, text: 'Terminal' },
   { id: 6, text: 'Help' },
 ];
 
@@ -33,7 +31,7 @@ function TitleBar() {
           </p>
         ))}
       </Box>
-      <Box className="flex flex-row gap-2 items-center">
+      <Box className="flex flex-row gap-2 items-center justify-center flex-grow basis-0 md:flex-grow-0 md:basis-full">
         <Tooltip
           placement="bottom"
           hasArrow
@@ -60,14 +58,14 @@ function TitleBar() {
             <NavigationArrowIcon size={15} className="rotate-[90deg]" />
           </Box>
         </Tooltip>
-        <Box className="flex flex-row mr-4 p-[2px] items-center md:flex-grow md:basis-0 border-[1px] md:w-[500px] rounded-lg">
+        <Box className="flex flex-row mr-4 p-[2px] items-center md:flex-grow md:basis-0 border-[1px] max-w-[500px] rounded-lg">
           <Box className="flex flex-row items-center gap-[5px] justify-center text-sm w-full">
             <SearchIcon size={20} className="rotate-90" />
             <p>Iram Navarrete - VS Code Portfolio</p>
           </Box>
         </Box>
       </Box>
-      <Box className="flex flex-row gap-1.5 flex-grow basis-0 justify-end items-center">
+      <Box className="flex flex-row gap-1.5 md:flex-grow md:basis-0 justify-end items-center">
         <Tooltip
           placement="bottom"
           hasArrow
