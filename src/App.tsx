@@ -1,18 +1,20 @@
 import './App.css';
 import { BrowserRouter } from 'react-router-dom';
-import { Sidebar, SplitView } from './components';
-import Footer from './components/Footer';
+import {
+  Sidebar, SplitView, Footer, TitleBar,
+} from './components';
 
 function App() {
   return (
     <div className="min-h-screen min-w-screen m-0 p-0 flex flex-col">
-      <div className="flex flex-1 border-b-[1px] border-border">
-        <BrowserRouter>
+      <BrowserRouter>
+        <TitleBar />
+        <div className="flex flex-1 border-b-[1px] border-border">
           <Sidebar />
           <SplitView />
-        </BrowserRouter>
-      </div>
-      <Footer />
+        </div>
+        <Footer />
+      </BrowserRouter>
     </div>
   );
 }

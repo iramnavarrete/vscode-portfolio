@@ -1,7 +1,7 @@
 import ChakraUIIcon from './ChakraUIIcon';
 import CoffeeIcon from './CoffeeIcon';
 import DoubleCheckIcon from './DoubleCheckIcon';
-import DownArrowIcon from './DownArrowIcon';
+import DownArrowIcon from './ExplorerArrowIcon';
 import EmailIcon from './EmailIcon';
 import ErrorIcon from './ErrorIcon';
 import GitBranchIcon from './GitBranchIcon';
@@ -9,7 +9,11 @@ import NotificationsIcon from './NotificationsIcon';
 import PagesIcon from './PagesIcon';
 import SettingsIcon from './SettingsIcon';
 import TailwindIcon from './Tailwind';
+import VSCodeIcon from './VSCodeIcon';
 import WarningIcon from './WarningIcon';
+import NavigationArrowIcon from './NavigationArrow';
+import SearchIcon from './SearchIcon';
+import ExplorerToggleIcon from './ExplorerToggleIcon';
 
 export {
   EmailIcon,
@@ -24,4 +28,8 @@ export {
   DownArrowIcon,
   ErrorIcon,
   WarningIcon,
+  VSCodeIcon,
+  NavigationArrowIcon,
+  SearchIcon,
+  ExplorerToggleIcon,
 };

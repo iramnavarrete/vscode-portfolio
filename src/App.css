@@ -1,3 +1,10 @@
 .gutter.gutter-horizontal {
   cursor: col-resize;
+  width: 0;
+}
+
+@media (min-width: 768px) {
+  .gutter.gutter-horizontal {
+    width: 2px;
+  }
 }
