@@ -58,7 +58,7 @@ function TitleBar() {
             <NavigationArrowIcon size={15} className="rotate-[90deg]" />
           </Box>
         </Tooltip>
-        <Box className="flex flex-row mr-4 p-[2px] items-center md:flex-grow md:basis-0 border-[1px] max-w-[500px] rounded-lg">
+        <Box className="flex flex-row mr-4 p-[2px] items-center md:flex-grow md:basis-0 border-[1px] max-w-[500px] rounded-lg px-4">
           <Box className="flex flex-row items-center gap-[5px] justify-center text-sm w-full">
             <SearchIcon size={20} className="rotate-90" />
             <p>Iram Navarrete - VS Code Portfolio</p>
