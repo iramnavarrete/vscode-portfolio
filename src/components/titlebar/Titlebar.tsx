@@ -19,7 +19,7 @@ const titleItems: TitleItem[] = [
 function TitleBar() {
   const navigate = useNavigate();
   return (
-    <Box className="bg-primary flex flex-row p-1 text-white">
+    <Box className="bg-primary border-b-border border-b-[1px] flex flex-row p-1 text-white">
       <Box className="p-1 flex flex-row items-center">
         <VSCodeIcon size={20} />
       </Box>
