@@ -11,7 +11,10 @@ const colors = {
   neutral: 'rgba(255, 255, 255, 0.2)',
   'icon-color': '#8c8c7d',
   'active-sidebar': '#101010',
-  border: '#313131',
+  'active-explorer': '#37373d',
+  'hover-explorer': '#2a2d2e',
+  border: '#434548',
+  searchbar: '#2a2a2a',
 };
 
 const sizes = {

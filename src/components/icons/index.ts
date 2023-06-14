@@ -14,6 +14,8 @@ import WarningIcon from './WarningIcon';
 import NavigationArrowIcon from './NavigationArrow';
 import SearchIcon from './SearchIcon';
 import ExplorerToggleIcon from './ExplorerToggleIcon';
+import HTMLIcon from './HTMLIcon';
+import TypeScriptIcon from './explorer/TypeScriptIcon';
 
 export {
   EmailIcon,
@@ -32,4 +34,6 @@ export {
   NavigationArrowIcon,
   SearchIcon,
   ExplorerToggleIcon,
+  HTMLIcon,
+  TypeScriptIcon,
 };

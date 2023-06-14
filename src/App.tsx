@@ -3,6 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import {
   Sidebar, SplitView, Footer, TitleBar,
 } from './components';
+import { ActivePageProvider } from './context/PageContext';
 
 function App() {
   return (
@@ -11,7 +12,9 @@ function App() {
         <TitleBar />
         <div className="flex flex-1 border-b-[1px] border-border">
           <Sidebar />
-          <SplitView />
+          <ActivePageProvider>
+            <SplitView />
+          </ActivePageProvider>
         </div>
         <Footer />
       </BrowserRouter>

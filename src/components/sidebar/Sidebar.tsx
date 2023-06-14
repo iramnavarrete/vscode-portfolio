@@ -1,4 +1,4 @@
-import { Link, useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { ReactElement } from 'react';
 import { Tooltip } from '@chakra-ui/react';
 import { EmailIcon, PagesIcon, SettingsIcon } from '../icons';
@@ -35,8 +35,6 @@ const sidebarBottomItems: SidebarItem[] = [
 ];
 
 function Sidebar(): ReactElement {
-  const { pathname } = useLocation();
-
   const renderIconsList = (iconList: SidebarItem[]): ReactElement => (
     <div className="flex flex-col">
       {iconList.map(({
@@ -52,14 +50,14 @@ function Sidebar(): ReactElement {
           borderColor={Theme.colors.border}
           arrowShadowColor={Theme.colors.border}
         >
-          <Link
-            className={`${pathname === path ? 'bg-active-sidebar border-l-2 bg-active-sidebar border-accent' : ''}`}
+          <NavLink
+            className={({ isActive }) => `${isActive ? 'bg-active-sidebar border-l-2 bg-active-sidebar border-accent' : ''}`}
             to={path}
           >
             <div className="flex flex-row justify-center py-2">
               <Icon />
             </div>
-          </Link>
+          </NavLink>
         </Tooltip>
       ))}
     </div>
