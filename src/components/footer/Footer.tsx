@@ -1,8 +1,9 @@
 import { ReactElement } from 'react';
 import { Box, useToast } from '@chakra-ui/react';
+import { FooterItem } from 'types';
 import NotificationToast from '../NotificationToast';
 import {
-  FooterItem, NOTIFICATION_ICON_ID, footerLeftItems, footerRightItems, toastsList,
+  NOTIFICATION_ICON_ID, footerLeftItems, footerRightItems, toastsList,
 } from './footerItems';
 
 function Footer(): ReactElement {

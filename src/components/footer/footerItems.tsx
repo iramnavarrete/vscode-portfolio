@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { FooterItem, Notification } from 'types';
 import {
   ChakraUIIcon,
   CoffeeIcon,
@@ -9,22 +9,6 @@ import {
   TailwindIcon,
   WarningIcon,
 } from '../icons';
-
-export interface FooterItem {
-  id: number,
-  text?: string,
-  Icon: () => ReactElement,
-  action: 'none' | 'go-to-url',
-  url?: string,
-  secondText?: string,
-  SecondIcon?: () => ReactElement
-}
-
-interface Notification {
-  id: number,
-  title?: string,
-  description?: string
-}
 
 const NOTIFICATION_ICON_ID = 10000;
 

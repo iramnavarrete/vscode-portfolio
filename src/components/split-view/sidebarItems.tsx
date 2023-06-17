@@ -1,7 +1,7 @@
-import { SidebarItem } from '../../types/types';
+import { SidebarName, SidebarItem } from 'types';
 import Explorer from '../Explorer';
 
-const sidebarItems: { [propKey: string]: SidebarItem } = {
+const sidebarItems: { [propKey in SidebarName]: SidebarItem } = {
   explorer: {
     id: 0,
     Component: () => <Explorer />,
@@ -11,8 +11,12 @@ const sidebarItems: { [propKey: string]: SidebarItem } = {
     Component: () => <h1>Soy el componente temas</h1>,
   },
   settings: {
-    id: 1,
+    id: 2,
     Component: () => <h1>Soy el componente configuración</h1>,
+  },
+  contact: {
+    id: 3,
+    Component: () => <h1>Soy el componente contacto</h1>,
   },
 };
 

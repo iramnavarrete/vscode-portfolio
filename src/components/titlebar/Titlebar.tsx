@@ -1,9 +1,9 @@
 import { Box, Tooltip } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
+import { TitleItem } from 'types';
 import {
   ExplorerToggleIcon, NavigationArrowIcon, SearchIcon, VSCodeIcon,
 } from '../icons';
-import { TitleItem } from './types';
 import Theme from '../../constants/Theme';
 
 const titleItems: TitleItem[] = [

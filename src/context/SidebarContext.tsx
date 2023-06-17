@@ -2,14 +2,14 @@
 import {
   createContext, useContext, ReactNode, useState,
 } from 'react';
-import { SidebarContextType } from './types';
+import { SidebarContextType, SidebarName } from 'types';
 
 const SidebarContext = createContext<SidebarContextType | null>(null);
 
 export const useActiveSidebarContext = () => useContext(SidebarContext) as SidebarContextType;
 
 function SidebarProvider({ children }: { children: ReactNode }) {
-  const [activeSidebar, setActiveSidebar] = useState<string>('explorer');
+  const [activeSidebar, setActiveSidebar] = useState<SidebarName>('explorer');
 
   const value: SidebarContextType = {
     activeSidebar,

@@ -8,7 +8,7 @@ import GitBranchIcon from './GitBranchIcon';
 import NotificationsIcon from './NotificationsIcon';
 import PagesIcon from './PagesIcon';
 import SettingsIcon from './SettingsIcon';
-import TailwindIcon from './Tailwind';
+import TailwindIcon from './TailwindIcon';
 import VSCodeIcon from './VSCodeIcon';
 import WarningIcon from './WarningIcon';
 import NavigationArrowIcon from './NavigationArrow';
@@ -16,6 +16,7 @@ import SearchIcon from './SearchIcon';
 import ExplorerToggleIcon from './ExplorerToggleIcon';
 import HTMLIcon from './HTMLIcon';
 import TypeScriptIcon from './explorer/TypeScriptIcon';
+import ThemeIcon from './activity-bar/ThemeIcon';
 
 export {
   EmailIcon,
@@ -36,4 +37,5 @@ export {
   ExplorerToggleIcon,
   HTMLIcon,
   TypeScriptIcon,
+  ThemeIcon,
 };

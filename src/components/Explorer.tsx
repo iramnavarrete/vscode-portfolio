@@ -1,14 +1,9 @@
-import {
-  useState, ReactElement,
-} from 'react';
+import { useState } from 'react';
 import { Box, Collapse } from '@chakra-ui/react';
 import { Link, useLocation } from 'react-router-dom';
+import { ExplorerIcon } from 'types';
 import { DownArrowIcon, HTMLIcon, TypeScriptIcon } from './icons';
 import pages from '../pages';
-
-interface ExplorerIcon {
-  icon: () => ReactElement
-}
 
 const explorerIcons: { [propKey: string]: ExplorerIcon } = {
   html: {

@@ -1,6 +1,6 @@
+import { Page } from 'types';
 import About from './About';
 import Home from './Home';
-import { Page } from './types';
 
 const pages: { [propKey: string]: Page } = {
   about: {

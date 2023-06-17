@@ -24,7 +24,6 @@ function SplitView() {
       <Box
         className="border-l-2 p-4 bg-primary border-border hidden md:block text-white min-w-[250px] md:min-w-[350px]"
       >
-        {/* <p>tmp container</p> */}
         <SideBarContent />
       </Box>
       <Box className="flex flex-1 bg-secondary">
