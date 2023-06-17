@@ -56,7 +56,9 @@ export type SidebarContextType = {
   setActiveSidebar: (newActiveSidebar: SidebarName) => void;
 };
 
+export type FileExtension = 'html' | 'tsx';
+
 export type Page = {
-  fileExtension: string;
+  fileExtension: FileExtension;
   Component: () => ReactElement;
 };

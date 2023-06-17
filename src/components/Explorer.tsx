@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { Box, Collapse } from '@chakra-ui/react';
 import { Link, useLocation } from 'react-router-dom';
-import { ExplorerIcon } from 'types';
+import { ExplorerIcon, FileExtension } from 'types';
 import { DownArrowIcon, HTMLIcon, TypeScriptIcon } from './icons';
 import pages from '../pages';
 
-const explorerIcons: { [propKey: string]: ExplorerIcon } = {
+const explorerIcons: { [propKey in FileExtension]: ExplorerIcon } = {
   html: {
     icon: () => <HTMLIcon size={14} />,
   },
@@ -15,7 +15,7 @@ const explorerIcons: { [propKey: string]: ExplorerIcon } = {
 };
 
 // Function to get icon with key fileExtension and return it
-function renderIconExplorer(fileExtension: string) {
+function renderIconExplorer(fileExtension: FileExtension) {
   const Icon = explorerIcons[fileExtension].icon;
   return <Icon />;
 }
