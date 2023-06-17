@@ -10,7 +10,7 @@ const colors = {
   secondary: '#1f1f1f',
   neutral: 'rgba(255, 255, 255, 0.2)',
   'icon-color': '#8c8c7d',
-  'active-sidebar': '#101010',
+  'active-activity-bar': '#101010',
   'active-explorer': '#37373d',
   'hover-explorer': '#2a2d2e',
   border: '#434548',

@@ -1,6 +1,10 @@
+import { Box } from '@chakra-ui/react';
+
 function Home() {
   return (
-    <h1 className="text-[#fff]">Home page</h1>
+    <Box>
+      <h1 className="text-[#fff]">Home page</h1>
+    </Box>
   );
 }
 

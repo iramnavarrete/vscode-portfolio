@@ -2,8 +2,8 @@ import {
   useState, ReactElement,
 } from 'react';
 import { Box, Collapse } from '@chakra-ui/react';
+import { Link, useLocation } from 'react-router-dom';
 import { DownArrowIcon, HTMLIcon, TypeScriptIcon } from './icons';
-import { useActivePageContext } from '../context/PageContext';
 import pages from '../pages';
 
 interface ExplorerIcon {
@@ -27,7 +27,7 @@ function renderIconExplorer(fileExtension: string) {
 
 function Explorer() {
   const [show, setShow] = useState<boolean>(true);
-  const { setActivePage, activePage } = useActivePageContext();
+  const { pathname } = useLocation();
 
   const style = {
     transform: show ? 'rotate(0deg)' : 'rotate(-90deg)',
@@ -49,17 +49,16 @@ function Explorer() {
             const page = key.toString();
             const { fileExtension } = pages[page];
             return (
-              <Box
-                as="button"
+              <Link
                 key={page}
-                onClick={() => setActivePage(page)}
-                className={`hover:bg-hover-explorer pl-8 ${activePage === page ? 'bg-active-explorer' : ''}`}
+                to={`/${key}`}
+                className={`hover:bg-hover-explorer pl-8 ${pathname === `/${key}` ? 'bg-active-explorer' : ''}`}
               >
                 <Box className="flex flex-row items-center gap-1.5">
                   {renderIconExplorer(fileExtension)}
                   <p>{`${key}.${fileExtension}`}</p>
                 </Box>
-              </Box>
+              </Link>
             );
           })}
         </Box>

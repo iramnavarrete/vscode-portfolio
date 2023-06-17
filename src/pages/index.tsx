@@ -4,14 +4,12 @@ import { Page } from './types';
 
 const pages: { [propKey: string]: Page } = {
   about: {
-    // page: 'about',
     fileExtension: 'html',
-    component: () => <About />,
+    Component: () => <About />,
   },
   home: {
-    // page: 'home',
     fileExtension: 'tsx',
-    component: () => <Home />,
+    Component: () => <Home />,
   },
 };
 

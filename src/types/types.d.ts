@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 
-export interface Page {
-  fileExtension: string,
+export interface SidebarItem {
+  id: number;
   Component: () => ReactElement;
 }

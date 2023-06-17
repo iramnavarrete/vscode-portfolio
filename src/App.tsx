@@ -1,9 +1,9 @@
 import './App.css';
 import { BrowserRouter } from 'react-router-dom';
 import {
-  Sidebar, SplitView, Footer, TitleBar,
+  ActivityBar, SplitView, Footer, TitleBar,
 } from './components';
-import { ActivePageProvider } from './context/PageContext';
+import { SidebarProvider } from './context/SidebarContext';
 
 function App() {
   return (
@@ -11,10 +11,10 @@ function App() {
       <BrowserRouter>
         <TitleBar />
         <div className="flex flex-1 border-b-[1px] border-border">
-          <Sidebar />
-          <ActivePageProvider>
+          <SidebarProvider>
+            <ActivityBar />
             <SplitView />
-          </ActivePageProvider>
+          </SidebarProvider>
         </div>
         <Footer />
       </BrowserRouter>
