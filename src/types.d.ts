@@ -58,6 +58,8 @@ export type SidebarContextType = {
 
 export type FileExtension = 'html' | 'tsx';
 
+export type PageName = 'home' | 'about';
+
 export type Page = {
   fileExtension: FileExtension;
   Component: () => ReactElement;
