@@ -6,8 +6,10 @@ export type SidebarItem = {
 };
 
 export type ExplorerIcon = {
-  icon: () => ReactElement;
+  Icon: () => ReactElement;
 };
+
+export type ExplorerIconArray = { [propKey in FileExtension]: ExplorerIcon };
 
 export type NotificationProps = {
   title: string;
@@ -64,3 +66,5 @@ export type Page = {
   fileExtension: FileExtension;
   Component: () => ReactElement;
 };
+
+export type PageArray = { [propKey in PageName]: Page };

@@ -1,22 +1,24 @@
 import { useState } from 'react';
 import { Box, Collapse } from '@chakra-ui/react';
 import { Link, useLocation } from 'react-router-dom';
-import { ExplorerIcon, FileExtension } from 'types';
+import {
+  ExplorerIconArray, FileExtension, PageArray,
+} from 'types';
 import { DownArrowIcon, HTMLIcon, TypeScriptIcon } from './icons';
 import pages from '../pages';
 
-const explorerIcons: { [propKey in FileExtension]: ExplorerIcon } = {
+const explorerIcons: ExplorerIconArray = {
   html: {
-    icon: () => <HTMLIcon size={14} />,
+    Icon: () => <HTMLIcon size={14} />,
   },
   tsx: {
-    icon: () => <TypeScriptIcon size={14} />,
+    Icon: () => <TypeScriptIcon size={14} />,
   },
 };
 
 // Function to get icon with key fileExtension and return it
 function renderIconExplorer(fileExtension: FileExtension) {
-  const Icon = explorerIcons[fileExtension].icon;
+  const { Icon } = explorerIcons[fileExtension];
   return <Icon />;
 }
 
@@ -41,11 +43,10 @@ function Explorer() {
         <Box className="flex flex-col">
           {/* Iterate object pages to get list of pages and render all of them */}
           {Object.keys(pages).map((key) => {
-            const page = key.toString();
-            const { fileExtension } = pages[page];
+            const { fileExtension } = pages[key as keyof PageArray];
             return (
               <Link
-                key={page}
+                key={key}
                 to={`/${key}`}
                 className={`hover:bg-hover-explorer pl-8 ${pathname === `/${key}` ? 'bg-active-explorer' : ''}`}
               >

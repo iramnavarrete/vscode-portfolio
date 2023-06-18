@@ -1,8 +1,8 @@
-import { Page, PageName } from 'types';
+import { PageArray } from 'types';
 import About from './About';
 import Home from './Home';
 
-const pages: { [propKey in PageName]: Page } = {
+const pages: PageArray = {
   about: {
     fileExtension: 'html',
     Component: () => <About />,
