@@ -2,12 +2,12 @@ import { useState } from 'react';
 import { Box, Collapse } from '@chakra-ui/react';
 import { Link, useLocation } from 'react-router-dom';
 import {
-  ExplorerIconArray, FileExtension, PageArray,
+  ExplorerIconsObject, FileExtension, PagesObject,
 } from 'types';
 import { DownArrowIcon, HTMLIcon, TypeScriptIcon } from './icons';
 import pages from '../pages';
 
-const explorerIcons: ExplorerIconArray = {
+const explorerIcons: ExplorerIconsObject = {
   html: {
     Icon: () => <HTMLIcon size={14} />,
   },
@@ -43,7 +43,7 @@ function Explorer() {
         <Box className="flex flex-col">
           {/* Iterate object pages to get list of pages and render all of them */}
           {Object.keys(pages).map((key) => {
-            const { fileExtension } = pages[key as keyof PageArray];
+            const { fileExtension } = pages[key as keyof PagesObject];
             return (
               <Link
                 key={key}

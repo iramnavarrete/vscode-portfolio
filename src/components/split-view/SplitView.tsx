@@ -1,11 +1,12 @@
 import Split from 'react-split';
 import { Box } from '@chakra-ui/react';
 import { Route, Routes } from 'react-router-dom';
+import { PagesObject } from 'types';
 import Theme from '../../constants/Theme';
 import { useActiveSidebarContext } from '../../context/SidebarContext';
 import sidebarItems from './sidebarItems';
-import Home from '../../pages/Home';
-import About from '../../pages/About';
+import pages from '../../pages';
+import Tabs from '../tabs/Tabs';
 
 function SideBarContent() {
   const { activeSidebar } = useActiveSidebarContext();
@@ -26,11 +27,13 @@ function SplitView() {
       >
         <SideBarContent />
       </Box>
-      <Box className="flex flex-1 bg-secondary">
+      <Box className="flex flex-col flex-1 bg-secondary">
+        <Tabs />
         <Routes>
-          <Route path="/home" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="*" element={<h1>Not Found</h1>} />
+          {Object.keys(pages).map((key) => {
+            const { Component } = pages[key as keyof PagesObject];
+            return <Route key={`page-${key}`} path={`/${key}`} element={<Component />} />;
+          })}
         </Routes>
       </Box>
     </Split>

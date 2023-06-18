@@ -9,7 +9,7 @@ export type ExplorerIcon = {
   Icon: () => ReactElement;
 };
 
-export type ExplorerIconArray = { [propKey in FileExtension]: ExplorerIcon };
+export type ExplorerIconsObject = { [propKey in FileExtension]: ExplorerIcon };
 
 export type NotificationProps = {
   title: string;
@@ -67,4 +67,4 @@ export type Page = {
   Component: () => ReactElement;
 };
 
-export type PageArray = { [propKey in PageName]: Page };
+export type PagesObject = { [propKey in PageName]: Page };
