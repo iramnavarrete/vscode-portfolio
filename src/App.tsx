@@ -1,9 +1,10 @@
 import './App.css';
 import { BrowserRouter } from 'react-router-dom';
 import {
-  ActivityBar, SplitView, Footer, TitleBar,
+  ActivityBar, Footer, TitleBar,
 } from './components';
 import { SidebarProvider } from './context/SidebarContext';
+import SplitView from './components/SplitView';
 
 function App() {
   return (

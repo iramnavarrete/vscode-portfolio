@@ -3,9 +3,9 @@ import { Box, Tooltip } from '@chakra-ui/react';
 import { ActivityBarItem } from 'types';
 import {
   EmailIcon, PagesIcon, SettingsIcon, ThemeIcon,
-} from '../icons';
-import Theme from '../../constants/Theme';
-import { useActiveSidebarContext } from '../../context/SidebarContext';
+} from './icons';
+import Theme from '../constants/Theme';
+import { useActiveSidebarContext } from '../context/SidebarContext';
 
 const activityBarTopItems: ActivityBarItem[] = [
   {

@@ -1,11 +1,15 @@
-import Footer from './footer/Footer';
-import ActivityBar from './activity-bar/ActivityBar';
-import SplitView from './split-view/SplitView';
-import TitleBar from './titlebar/Titlebar';
+import Footer from './Footer';
+import ActivityBar from './ActivityBar';
+import TitleBar from './Titlebar';
+import ParticlesBackground from './Particles';
+import Explorer from './Explorer';
+import Tabs from './Tabs';
 
 export {
   ActivityBar,
-  SplitView,
   Footer,
   TitleBar,
+  ParticlesBackground,
+  Explorer,
+  Tabs,
 };

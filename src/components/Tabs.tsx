@@ -1,8 +1,7 @@
 import { Box } from '@chakra-ui/react';
 import { Link, useLocation } from 'react-router-dom';
 import { ExplorerIconsObject, FileExtension, PagesObject } from 'types';
-import pages from '../../pages';
-import { HTMLIcon, TypeScriptIcon } from '../icons';
+import { HTMLIcon, TypeScriptIcon } from './icons';
 
 const explorerIcons: ExplorerIconsObject = {
   html: {
@@ -19,14 +18,14 @@ function renderIconExplorer(fileExtension: FileExtension) {
   const { Icon } = explorerIcons[fileExtension];
   return <Icon />;
 }
-function Tabs() {
+function Tabs({ pagesObject }:{ pagesObject: PagesObject }) {
   const { pathname } = useLocation();
   return (
     <Box className="flex flex-row">
       <Box className="flex flex-row flex-1 border-b-[1px] border-border">
         {/* Iterate object pages to get list of pages and render all of them */}
-        {Object.keys(pages).map((key) => {
-          const { fileExtension } = pages[key as keyof PagesObject];
+        {Object.keys(pagesObject).map((key) => {
+          const { fileExtension } = pagesObject[key as keyof PagesObject];
           return (
             <Link
               key={key}

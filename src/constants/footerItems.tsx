@@ -8,7 +8,7 @@ import {
   NotificationsIcon,
   TailwindIcon,
   WarningIcon,
-} from '../icons';
+} from '../components/icons';
 
 const NOTIFICATION_ICON_ID = 10000;
 

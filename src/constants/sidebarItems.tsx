@@ -1,10 +1,12 @@
-import { SidebarName, SidebarItem } from 'types';
-import Explorer from '../Explorer';
+import {
+  SidebarItem, SidebarItemProps, SidebarName,
+} from 'types';
+import { Explorer } from '../components';
 
 const sidebarItems: { [propKey in SidebarName]: SidebarItem } = {
   explorer: {
     id: 0,
-    Component: () => <Explorer />,
+    Component: ({ pagesObject }:SidebarItemProps) => <Explorer pagesObject={pagesObject} />,
   },
   themes: {
     id: 1,

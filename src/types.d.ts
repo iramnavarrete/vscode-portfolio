@@ -1,8 +1,10 @@
 import { ReactElement, ComponentProps } from 'react';
 
+type SidebarItemProps = { pagesObject?: PagesObject };
+
 export type SidebarItem = {
   id: number;
-  Component: () => ReactElement;
+  Component: ({ pagesObject }: SidebarItemProps) => ReactElement;
 };
 
 export type ExplorerIcon = {

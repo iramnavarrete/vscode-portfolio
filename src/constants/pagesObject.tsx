@@ -1,8 +1,7 @@
 import { PagesObject } from 'types';
-import About from './About';
-import Home from './Home';
+import { About, Home } from '../pages';
 
-const pages: PagesObject = {
+const pagesObject: PagesObject = {
   about: {
     fileExtension: 'html',
     Component: () => <About />,
@@ -13,4 +12,4 @@ const pages: PagesObject = {
   },
 };
 
-export default pages;
+export default pagesObject;

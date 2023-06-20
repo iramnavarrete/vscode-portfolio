@@ -2,10 +2,10 @@ import { useState } from 'react';
 import { Box, Collapse } from '@chakra-ui/react';
 import { Link, useLocation } from 'react-router-dom';
 import {
-  ExplorerIconsObject, FileExtension, PagesObject,
+  ExplorerIconsObject, FileExtension, PagesObject, SidebarItemProps,
 } from 'types';
 import { DownArrowIcon, HTMLIcon, TypeScriptIcon } from './icons';
-import pages from '../pages';
+// import pagesObject from '../constants/pagesObject';
 
 const explorerIcons: ExplorerIconsObject = {
   html: {
@@ -22,7 +22,7 @@ function renderIconExplorer(fileExtension: FileExtension) {
   return <Icon />;
 }
 
-function Explorer() {
+function Explorer({ pagesObject }: SidebarItemProps) {
   const [show, setShow] = useState<boolean>(true);
   const { pathname } = useLocation();
 
@@ -42,8 +42,8 @@ function Explorer() {
       <Collapse in={show} animateOpacity>
         <Box className="flex flex-col">
           {/* Iterate object pages to get list of pages and render all of them */}
-          {Object.keys(pages).map((key) => {
-            const { fileExtension } = pages[key as keyof PagesObject];
+          { pagesObject && Object.keys(pagesObject).map((key) => {
+            const { fileExtension } = pagesObject[key as keyof PagesObject];
             return (
               <Link
                 key={key}

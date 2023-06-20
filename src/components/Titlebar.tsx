@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { TitleItem } from 'types';
 import {
   ExplorerToggleIcon, NavigationArrowIcon, SearchIcon, VSCodeIcon,
-} from '../icons';
-import Theme from '../../constants/Theme';
+} from './icons';
+import Theme from '../constants/Theme';
 
 const titleItems: TitleItem[] = [
   { id: 0, text: 'File' },

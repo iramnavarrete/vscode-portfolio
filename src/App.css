@@ -1,3 +1,12 @@
+@font-face {
+  font-family: 'HackNerd';
+  src: url('../public/fonts/Hack-Nerd-Font-2.ttf');
+}
+
+* {
+  font-family: 'HackNerd';
+}
+
 .gutter.gutter-horizontal {
   cursor: col-resize;
   width: 0;
@@ -7,4 +16,24 @@
   .gutter.gutter-horizontal {
     width: 2px;
   }
+}
+
+#tsparticles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 0;
+  margin: 0;
+  z-index: 0; /* if you use -1 you have to set to `"window"` the interactivity.detectsOn property */
+}
+
+.page-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
 }
