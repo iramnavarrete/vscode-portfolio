@@ -68,7 +68,7 @@ function Footer(): ReactElement {
       <div className="flex flex-grow">
         {renderItemsList(footerLeftItems)}
       </div>
-      <div className="flex">
+      <div className="flex flex-1 justify-end">
         {renderItemsList(footerRightItems)}
       </div>
     </footer>

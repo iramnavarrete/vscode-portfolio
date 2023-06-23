@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'HackNerd';
-  src: url('../public/fonts/Hack-Nerd-Font-2.ttf');
+  src: url('/fonts/Hack-Nerd-Font-2.ttf');
 }
 
 * {
@@ -26,7 +26,7 @@
   right: 0;
   padding: 0;
   margin: 0;
-  z-index: 0; /* if you use -1 you have to set to `"window"` the interactivity.detectsOn property */
+  z-index: 0;
 }
 
 .page-container {
@@ -36,4 +36,27 @@
   z-index: 1;
   width: 100%;
   height: 100%;
+}
+
+.page-container::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.page-container::-webkit-scrollbar-track {
+  background-clip: content-box;
+  border: 2px solid transparent;
+}
+
+.page-container::-webkit-scrollbar-thumb {
+  background-color: #606367;
+}
+
+.page-container::-webkit-scrollbar-thumb:hover {
+  background-color: #606367;
+}
+
+.page-container::-webkit-scrollbar-corner,
+.page-container::-webkit-scrollbar-track {
+  background-color: #434548;
 }

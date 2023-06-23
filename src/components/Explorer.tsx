@@ -5,7 +5,6 @@ import {
   ExplorerIconsObject, FileExtension, PagesObject, SidebarItemProps,
 } from 'types';
 import { DownArrowIcon, HTMLIcon, TypeScriptIcon } from './icons';
-// import pagesObject from '../constants/pagesObject';
 
 const explorerIcons: ExplorerIconsObject = {
   html: {
