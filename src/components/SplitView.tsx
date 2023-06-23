@@ -32,7 +32,7 @@ function SplitView() {
         <Routes>
           {Object.keys(pagesObject).map((key) => {
             const { Component } = pagesObject[key as keyof PagesObject];
-            return <Route key={`page-${key}`} path={`/${key}`} element={<Component />} />;
+            return <Route key={`page-${key}`} path={`/${key === 'home' ? '' : key}`} element={<Component />} />;
           })}
           <Route path="*" element={<h1 className="text-white">Not found</h1>} />
         </Routes>

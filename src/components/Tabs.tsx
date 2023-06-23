@@ -29,8 +29,8 @@ function Tabs({ pagesObject }:{ pagesObject: PagesObject }) {
           return (
             <Link
               key={key}
-              to={`/${key}`}
-              className={`hover:bg-hover-explorer px-4 py-2 text-white ${pathname === `/${key}` ? 'bg-active-explorer border-t-[1px] border-accent' : 'border-x-[1px] border-border'}`}
+              to={`/${key === 'home' ? '' : key}`}
+              className={`hover:bg-hover-explorer px-4 py-2 text-white ${pathname === `/${key}` || (key === 'home' && pathname === '/') ? 'bg-active-explorer border-t-[1px] border-accent' : 'border-x-[1px] border-border'}`}
             >
               <Box className="flex flex-row items-center gap-1.5">
                 {renderIconExplorer(fileExtension)}

@@ -27,7 +27,7 @@ function Explorer({ pagesObject }: SidebarItemProps) {
 
   const style = {
     transform: show ? 'rotate(0deg)' : 'rotate(-90deg)',
-    transition: 'transform 150ms ease', // smooth transition
+    transition: 'transform 150ms ease',
   };
   return (
     <Box>
@@ -46,8 +46,8 @@ function Explorer({ pagesObject }: SidebarItemProps) {
             return (
               <Link
                 key={key}
-                to={`/${key}`}
-                className={`hover:bg-hover-explorer pl-8 ${pathname === `/${key}` ? 'bg-active-explorer' : ''}`}
+                to={`/${key === 'home' ? '' : key}`}
+                className={`hover:bg-hover-explorer pl-8 ${pathname === `/${key}` || (key === 'home' && pathname === '/') ? 'bg-active-explorer' : ''}`}
               >
                 <Box className="flex flex-row items-center gap-1.5">
                   {renderIconExplorer(fileExtension)}
