@@ -23,7 +23,7 @@ function SplitView() {
       sizes={[20, 80]}
     >
       <Box
-        className="border-l-2 p-4 bg-primary border-border hidden lg:block text-white min-w-[250px] lg:min-w-[350px]"
+        className="border-l-2 p-4 bg-primary border-border hidden lg:block text-white min-w-[200px] max-w-[240px] lg:min-w-[300px] lg:max-w-[370px]"
       >
         <SideBarContent />
       </Box>

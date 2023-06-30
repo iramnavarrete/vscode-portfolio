@@ -2,45 +2,29 @@ import { Box, Image } from '@chakra-ui/react';
 
 function ProfileAndTechs() {
   return (
-    <Box className="flex flex-1 justify-end xl:justify-center">
-      <Box className="flex flex-row justify-center items-center">
+    <Box className="flex flex-1 justify-end xl:justify-center md:items-center">
+      <Box className={`flex flex-row justify-center items-center 
+            w-[170px] h-[170px]
+            2xs:w-[270px] 2xs:h-[270px]
+            xl:w-[380px]
+            2xl:w-[450px]`}
+      >
         <Image
           alt="profile"
-          className={`rounded-full z-[10] absolute animate-fade-up animate-once animate-duration-100 animate-ease-in
-            h-[150px]
+          className={`rounded-full z-[10] absolute animate-fade-up animate-once animate-duration-100 animate-ease-in drop-shadow-[10px_10px_10px_rgba(0,0,0,0.5)]
+            h-[150px] 
             2xs:h-[250px]
-            sm:h-[300px]
-            md:h-[350px]
-            2xl:h-[450px]
+            xl:h-[350px]
+            2xl:h-[420px]
             `}
-          src="img/profile.png"
+          src="img/profile.jpg"
         />
-        {/* middle circles section */}
-        <svg
-          className={`z-[5] drop-shadow-[10px_10px_10px_rgba(0,0,0,0.5)]
-            h-[200px] 
-            2xs:h-[320px]
-            sm:h-[350px]
-            2xl:h-[600px]
-            `}
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 320 434"
-          fill="none"
-        >
-          <g filter="url(#filter0_d_10_2)">
-            <circle cx="160" cy="160" r="160" fill="#28292D" />
-          </g>
-          <g filter="url(#filter1_d_10_2)">
-            <circle cx="160" cy="320" r="94" fill="#28292D" />
-          </g>
-        </svg>
         {/* React section */}
         <Box className={` z-[50] flex justify-center items-center absolute drop-shadow-[10px_10px_10px_rgba(0,0,0,0.5)]
-            w-[45px] translate-x-[-60px] translate-y-[50px]
-            2xs:w-[70px] 2xs:translate-x-[-100px] 2xs:translate-y-[70px]
-            sm:w-[80px] sm:translate-x-[-110px] 2xs:translate-y-[90px]
-            md:w-[100px] md:translate-x-[-110px] md:translate-y-[90px]
-            2xl:w-[150px] 2xl:translate-x-[-180px] 2xl:translate-y-[140px]
+            w-[45px] translate-x-[-45px] translate-y-[70px]
+            2xs:w-[70px] 2xs:translate-x-[-85px] 2xs:translate-y-[110px]
+            xl:w-[100px] xl:translate-x-[-115px] xl:translate-y-[160px]
+            2xl:w-[120px] 2xl:translate-x-[-130px] 2xl:translate-y-[190px]
             `}
         >
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 79 79" fill="none">
@@ -49,10 +33,9 @@ function ProfileAndTechs() {
           <svg
             className={`z-[100] absolute animate-spin animate-duration-[5000ms] animate-ease-in-out
               w-[35px] 
-              2xs:w-[50px]
-              sm:w-[60px]
-              md:w-[80px]
-              2xl:w-[120px]
+              2xs:w-[60px]
+              xl:w-[80px]
+              2xl:w-[100px]
               `}
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 64 64"
@@ -72,9 +55,9 @@ function ProfileAndTechs() {
         {/* Node section */}
         <Box className={`z-[50] flex justify-center items-center absolute drop-shadow-[10px_10px_10px_rgba(0,0,0,0.75)]
           w-[40px] translate-x-[65px] translate-y-[45px]
-          2xs:w-[50px] 2xs:translate-x-[90px] 2xs:translate-y-[60px]
-          sm:w-[60px] sm:translate-x-[110px] sm:translate-y-[80px]
-          2xl:w-[110px] 2xl:translate-x-[170px] 2xl:translate-y-[120px]
+          2xs:w-[50px] 2xs:translate-x-[100px] 2xs:translate-y-[70px]
+          xl:w-[80px] xl:translate-x-[145px] xl:translate-y-[100px]
+          2xl:w-[100px] 2xl:translate-x-[165px] 2xl:translate-y-[120px]
           `}
         >
           <svg
@@ -88,8 +71,8 @@ function ProfileAndTechs() {
             className={`z-[100] absolute animate-wiggle-more animate-infinite animate-duration-[3000ms] animate-ease-in animate-fill-backwards
               w-[25px]
               2xs:w-[35px]
-              sm:w-[45px]
-              2xl:w-[75px]
+              xl:w-[50px]
+              2xl:w-[60px]
               `}
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 32 32"
@@ -111,9 +94,10 @@ function ProfileAndTechs() {
         </Box>
         {/* dotnet section */}
         <Box className={`z-[50] flex justify-center items-center absolute
-         w-[35px] translate-x-[-50px] translate-y-[-80px]
-         2xs:w-[55px] 2xs:translate-x-[-90px] 2xs:translate-y-[-100px]
-         2xl:w-[80px] 2xl:translate-x-[-160px] 2xl:translate-y-[-190px]
+         w-[35px] translate-x-[-40px] translate-y-[-60px]
+         2xs:w-[55px] 2xs:translate-x-[-70px] 2xs:translate-y-[-90px]
+         xl:w-[80px] xl:translate-x-[-100px] xl:translate-y-[-130px]
+         2xl:w-[90px] 2xl:translate-x-[-115px] 2xl:translate-y-[-150px]
          `}
         >
           <svg
