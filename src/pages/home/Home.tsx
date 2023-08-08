@@ -1,28 +1,26 @@
 import { Box } from '@chakra-ui/react';
-import { ParticlesBackground } from '../../components';
+import { ProjectsButton, ParticlesBackground } from '../../components';
 import ProfileAndTechs from './ProfileAndTechs';
 
 export default function Home() {
   return (
     <Box className="relative flex flex-1">
       <ParticlesBackground />
-      <div className="page-container overflow-y-auto overflow-x-hidden flex flex-1 justify-center">
+      <div className="page-container overflow-y-auto overflow-x-hidden flex flex-1 justify-evenly">
         <Box className="flex flex-1">
-          <Box className="flex flex-1 flex-row flex-wrap justify-between mx-4 my-8 sm:m-8 md:m-14 2xl:mx-28 gap-8">
-            <Box className="text-white flex flex-col justify-center gap-8">
+          <Box className="flex flex-1 flex-row flex-wrap justify-center gap-x-32 gap-y-8 px-4 py-2">
+            <Box className="text-white flex flex-col justify-center gap-4 md:gap-8">
               <Box className="py-2 px-2.5 rounded bg-accent text-xs max-w-max">
                 <p>Full-Stack Developer</p>
               </Box>
-              <p className="text-xl sm:text-2xl 2xl:text-3xl leading-snug">
+              <p className="text-xl sm:text-2xl 2xl:text-4xl leading-10">
                 “Hello world”
                 <br />
                 My name is Iram
               </p>
               <p className="text-md xs:max-w-[40ch]">Passionate full-stack developer with 3+ years of experience</p>
               <Box className="flex flex-grow-[0.25] items-end justify-end">
-                <Box as="button" className="bg-gradient-to-r from-accent to-accent bg-no-repeat bg-bottom bg-[length:100%_3px] sm:bg-bottom bg-[length:100%_5px] md:bg-bottom bg-[length:100%_6px] hover:bg-[length:100%_100%] transition-[background-size]">
-                  <p className="text-xl sm:text-2xl 2xl:text-3xl leading-snug py-1">{'<ContactMe />'}</p>
-                </Box>
+                <ProjectsButton />
               </Box>
             </Box>
             <ProfileAndTechs />

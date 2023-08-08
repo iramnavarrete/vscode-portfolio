@@ -2,7 +2,7 @@ import { Box, Image } from '@chakra-ui/react';
 
 function ProfileAndTechs() {
   return (
-    <Box className="flex flex-1 justify-end xl:justify-center md:items-center">
+    <Box className="flex flex-1 justify-end xl:justify-center md:items-center max-w-[450px]">
       <Box className={`flex flex-row justify-center items-center 
             w-[170px] h-[170px]
             2xs:w-[270px] 2xs:h-[270px]
