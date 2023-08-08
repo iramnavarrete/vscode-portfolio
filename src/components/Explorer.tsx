@@ -4,7 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 import {
   ExplorerIconsObject, FileExtension, PagesObject, SidebarItemProps,
 } from 'types';
-import { DownArrowIcon, HTMLIcon, TypeScriptIcon } from './icons';
+import { DownArrowIcon, HTMLIcon, TypeScriptIcon } from '@/components/icons';
 
 const explorerIcons: ExplorerIconsObject = {
   html: {

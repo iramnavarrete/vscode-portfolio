@@ -1,7 +1,7 @@
 import { Box } from '@chakra-ui/react';
 import { Link, useLocation } from 'react-router-dom';
 import { ExplorerIconsObject, FileExtension, PagesObject } from 'types';
-import { HTMLIcon, TypeScriptIcon } from './icons';
+import { HTMLIcon, TypeScriptIcon } from '@/components/icons';
 
 const explorerIcons: ExplorerIconsObject = {
   html: {

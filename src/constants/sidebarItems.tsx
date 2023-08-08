@@ -1,7 +1,7 @@
 import {
   SidebarItem, SidebarItemProps, SidebarName,
 } from 'types';
-import { Explorer } from '../components';
+import { Explorer } from '@/components';
 
 const sidebarItems: { [propKey in SidebarName]: SidebarItem } = {
   explorer: {

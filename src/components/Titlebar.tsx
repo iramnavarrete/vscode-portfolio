@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { TitleItem } from 'types';
 import {
   ExplorerToggleIcon, NavigationArrowIcon, SearchIcon, VSCodeIcon,
-} from './icons';
+} from '@/components/icons';
 import Theme from '../constants/Theme';
 
 const titleItems: TitleItem[] = [

@@ -4,7 +4,7 @@ import TitleBar from './Titlebar';
 import ParticlesBackground from './Particles';
 import Explorer from './Explorer';
 import Tabs from './Tabs';
-import ProjectsButton from './ProjectsButton';
+import RectButton from './RectButton';
 
 export {
   ActivityBar,
@@ -13,5 +13,5 @@ export {
   ParticlesBackground,
   Explorer,
   Tabs,
-  ProjectsButton,
+  RectButton,
 };

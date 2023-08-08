@@ -66,26 +66,23 @@ body {
   background-color: #434548;
 }
 
-.contact-me-button {
+.rect-button {
   position: relative;
   font-family: inherit;
   font-weight: 500;
   font-size: 18px;
   letter-spacing: 0.05em;
-  border-radius: 0.8em;
-  border: none;
-  background: linear-gradient(to right, #0066b4, #5c2d91) !important;
   color: ghostwhite;
   overflow: hidden;
 }
 
-.contact-me-button svg {
+.rect-button svg {
   width: 1.2em;
   height: 1.2em;
   margin-right: 0.5em;
 }
 
-.contact-me-button span {
+.rect-button span {
   position: relative;
   z-index: 10;
   transition: color 0.4s;
@@ -94,8 +91,8 @@ body {
   padding: 0.8em 1.2em 0.8em 1.05em;
 }
 
-.contact-me-button::before,
-.contact-me-button::after {
+.rect-button::before,
+.rect-button::after {
   position: absolute;
   top: 0;
   left: 0;
@@ -104,19 +101,18 @@ body {
   z-index: 0;
 }
 
-.contact-me-button::before {
+.rect-button::before {
   content: "";
-  background: #000;
   width: 120%;
   left: -10%;
   transform: skew(30deg);
   transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
 }
 
-.contact-me-button:hover::before {
+.rect-button:hover::before {
   transform: translate3d(100%, 0, 0);
 }
 
-.contact-me-button:active {
+.rect-button:active {
   transform: scale(0.95);
 }

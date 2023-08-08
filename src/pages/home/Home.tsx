@@ -1,6 +1,7 @@
 import { Box } from '@chakra-ui/react';
-import { ProjectsButton, ParticlesBackground } from '../../components';
+import { RectButton, ParticlesBackground } from '@/components';
 import ProfileAndTechs from './ProfileAndTechs';
+import { CodeIcon } from '@/components/icons';
 
 export default function Home() {
   return (
@@ -20,7 +21,7 @@ export default function Home() {
               </p>
               <p className="text-md xs:max-w-[40ch]">Passionate full-stack developer with 3+ years of experience</p>
               <Box className="flex flex-grow-[0.25] items-end justify-end">
-                <ProjectsButton />
+                <RectButton icon={CodeIcon} text="Projects" />
               </Box>
             </Box>
             <ProfileAndTechs />
