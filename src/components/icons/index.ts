@@ -18,6 +18,7 @@ import HTMLIcon from './HTMLIcon';
 import TypeScriptIcon from './explorer/TypeScriptIcon';
 import ThemeIcon from './activity-bar/ThemeIcon';
 import CodeIcon from './CodeIcon';
+import DownloadCVIcon from './DownloadCVIcon';
 
 export {
   EmailIcon,
@@ -40,4 +41,5 @@ export {
   TypeScriptIcon,
   ThemeIcon,
   CodeIcon,
+  DownloadCVIcon,
 };

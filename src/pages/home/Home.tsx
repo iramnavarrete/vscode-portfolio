@@ -1,7 +1,7 @@
 import { Box } from '@chakra-ui/react';
 import { RectButton, ParticlesBackground } from '@/components';
 import ProfileAndTechs from './ProfileAndTechs';
-import { CodeIcon } from '@/components/icons';
+import { CodeIcon, DownloadCVIcon } from '@/components/icons';
 
 export default function Home() {
   return (
@@ -20,8 +20,9 @@ export default function Home() {
                 My name is Iram
               </p>
               <p className="text-md xs:max-w-[40ch]">Passionate full-stack developer with 3+ years of experience</p>
-              <Box className="flex flex-grow-[0.25] items-end justify-end">
-                <RectButton icon={CodeIcon} text="Projects" />
+              <Box className="flex items-end pt-4 justify-start">
+                <RectButton icon={CodeIcon} text="Projects" type="link" to="about" />
+                <RectButton icon={DownloadCVIcon} text="Download CV" type="download" to="/files/CV_Iram_Navarrete.pdf" />
               </Box>
             </Box>
             <ProfileAndTechs />
