@@ -70,3 +70,39 @@ export type Page = {
 };
 
 export type PagesObject = { [propKey in PageName]: Page };
+
+export type ThemeContextType = {
+  activeTheme: ThemeName;
+  setActiveTheme: (newActiveSidebar: ThemeName) => void;
+};
+
+export type ThemeName = 'dark-modern' | 'one-dark-pro';
+
+type RGB = `rgb(${number}, ${number}, ${number})`;
+type RGBA = `rgba(${number}, ${number}, ${number}, ${number})`;
+type HEX = `#${string}`;
+
+type Color = RGB | RGBA | HEX | 'transparent';
+
+/* eslint-disable react/jsx-no-constructed-context-values */
+interface Theme {
+  'accent-color': Color;
+  'icon-color': Color;
+  'active-activity-bar-icon-background': Color;
+  'active-activity-bar-icon-accent': Color;
+  'activity-bar': Color;
+  'active-explorer': Color;
+  'hover-explorer': Color;
+  'sidebar-background': Color;
+  'footer-background': Color;
+  'border': Color;
+  'search-bar': Color;
+  'gutter': Color;
+  'header-background': Color;
+  'page-content-background': Color;
+  'tabs-background': Color;
+  'string': Color;
+  'code' : Color;
+}
+
+export type ThemeObject = { [propKey in ThemeName]: Theme };

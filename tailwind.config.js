@@ -1,14 +1,12 @@
 /** @type {import('tailwindcss').Config} */
-import Theme from "./src/constants/Theme"
+import { createThemes } from "tw-colors";
+import Theme from "./src/constants/Theme.js"
 import TailwindAnimated from "tailwindcss-animated"
 const colors = Theme.colors;
 
 export default {
   content: ["./index.html",'./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
-    extend: {
-      colors,
-    },
     screens: {
       // => @media (min-width: 390px) { ... }
       '2xs': '389px',
@@ -27,7 +25,8 @@ export default {
     }
   },
   plugins: [
-    TailwindAnimated
+    TailwindAnimated,
+    createThemes(colors),
   ],
 }
 

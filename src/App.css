@@ -14,12 +14,13 @@ body {
 
 .gutter.gutter-horizontal {
   cursor: col-resize;
-  width: 0;
+  width: 0 !important;
+  background-color: hsl(var(--twc-gutter))
 }
 
 @media (min-width: 768px) {
   .gutter.gutter-horizontal {
-    width: 2px;
+    width: 2px !important;
   }
 }
 

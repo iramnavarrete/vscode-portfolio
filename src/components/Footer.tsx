@@ -39,7 +39,7 @@ function Footer(): ReactElement {
           key={`footer-item-${id}`}
           href={`${action !== 'none' && url ? url : '#'}`}
           target={`${action !== 'none' && url ? '_blank' : '_self'}`}
-          className=" mx-2 px-2 flex flex-row w-max hover:bg-accent text-white text-sm"
+          className=" mx-2 px-2 flex flex-row w-max hover:bg-accent-color text-white text-sm"
           rel="noreferrer"
           onClick={() => {
             if (id === NOTIFICATION_ICON_ID) {
@@ -64,7 +64,7 @@ function Footer(): ReactElement {
   );
 
   return (
-    <footer className="px-2 min-h-6 flex flex-row flex-wrap content-between bg-primary">
+    <footer className="px-2 min-h-6 flex flex-row flex-wrap content-between bg-footer-background">
       <div className="flex flex-grow">
         {renderItemsList(footerLeftItems)}
       </div>

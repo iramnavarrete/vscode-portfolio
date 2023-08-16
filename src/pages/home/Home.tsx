@@ -11,11 +11,11 @@ export default function Home() {
         <Box className="flex flex-1">
           <Box className="flex flex-1 flex-row flex-wrap justify-center gap-x-32 gap-y-8 px-4 py-2">
             <Box className="text-white flex flex-col justify-center gap-4 md:gap-8">
-              <Box className="py-2 px-2.5 rounded bg-accent text-xs max-w-max">
+              <Box className="py-2 px-2.5 rounded bg-accent-color text-xs max-w-max">
                 <p>Full-Stack Developer</p>
               </Box>
-              <p className="text-xl sm:text-2xl 2xl:text-4xl leading-10">
-                “Hello world”
+              <p className="text-xl sm:text-2xl 2xl:text-4xl leading-10 text-code">
+                <span className="text-string">“Hello world”</span>
                 <br />
                 My name is Iram
               </p>

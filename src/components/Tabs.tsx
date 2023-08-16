@@ -22,7 +22,7 @@ function Tabs({ pagesObject }:{ pagesObject: PagesObject }) {
   const { pathname } = useLocation();
   return (
     <Box className="flex flex-row">
-      <Box className="flex flex-row flex-1 border-b-[1px] border-border">
+      <Box className="flex flex-row flex-1 border-b-[1px] border-border bg-tabs-background">
         {/* Iterate object pages to get list of pages and render all of them */}
         {Object.keys(pagesObject).map((key) => {
           const { fileExtension } = pagesObject[key as keyof PagesObject];
@@ -30,7 +30,7 @@ function Tabs({ pagesObject }:{ pagesObject: PagesObject }) {
             <Link
               key={key}
               to={`/${key === 'home' ? '' : key}`}
-              className={`hover:bg-hover-explorer px-4 py-2 text-white ${pathname === `/${key}` || (key === 'home' && pathname === '/') ? 'bg-active-explorer border-t-[1px] border-accent' : 'border-x-[1px] border-border'}`}
+              className={`hover:bg-hover-explorer px-4 py-2 text-white ${pathname === `/${key}` || (key === 'home' && pathname === '/') ? 'bg-active-explorer border-t-[1px] border-accent-color' : 'border-x-[1px] border-border'}`}
             >
               <Box className="flex flex-row items-center gap-1.5">
                 {renderIconExplorer(fileExtension)}

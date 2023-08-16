@@ -3,8 +3,10 @@ import Particles from 'react-particles';
 import { loadFull } from 'tsparticles';
 import type { Engine } from 'tsparticles-engine';
 import Theme from '../constants/Theme';
+import { useActiveThemeContext } from '@/context/ThemeContext';
 
 function ParticlesBackground() {
+  const { activeTheme } = useActiveThemeContext();
   const particlesInit = useCallback(async (engine: Engine) => {
     await loadFull(engine);
   }, []);
@@ -34,7 +36,7 @@ function ParticlesBackground() {
                   opacity: 1,
                   size: 30,
                   speed: 3,
-                  color: Theme.colors.border,
+                  color: Theme.colors[activeTheme].border,
                 },
                 connect: {
                   distance: 60,

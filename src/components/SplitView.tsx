@@ -2,7 +2,6 @@ import Split from 'react-split';
 import { Box } from '@chakra-ui/react';
 import { Route, Routes } from 'react-router-dom';
 import { PagesObject } from 'types';
-import Theme from '../constants/Theme';
 import { useActiveSidebarContext } from '../context/SidebarContext';
 import sidebarItems from '../constants/sidebarItems';
 import pagesObject from '../constants/pagesObject';
@@ -19,15 +18,14 @@ function SplitView() {
   return (
     <Split
       className="flex flex-1"
-      gutterStyle={() => ({ backgroundColor: Theme.colors.border })}
       sizes={[20, 80]}
     >
       <Box
-        className="border-l-2 p-4 bg-primary border-border hidden lg:block text-white min-w-[200px] max-w-[240px] lg:min-w-[300px] lg:max-w-[370px]"
+        className="border-l-2 p-4 bg-sidebar-background border-border hidden lg:block text-white min-w-[200px] max-w-[240px] lg:min-w-[300px] lg:max-w-[370px]"
       >
         <SideBarContent />
       </Box>
-      <Box className="flex flex-col flex-1 bg-secondary">
+      <Box className="flex flex-col flex-1 bg-page-content-background">
         <Tabs pagesObject={pagesObject} />
         <Routes>
           {Object.keys(pagesObject).map((key) => {

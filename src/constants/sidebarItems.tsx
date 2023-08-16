@@ -1,7 +1,23 @@
 import {
   SidebarItem, SidebarItemProps, SidebarName,
 } from 'types';
+import { Button } from '@chakra-ui/react';
 import { Explorer } from '@/components';
+import { useActiveThemeContext } from '@/context/ThemeContext';
+
+function ThemesComponent() {
+  const { setActiveTheme } = useActiveThemeContext();
+  return (
+    <div>
+      <Button onClick={() => setActiveTheme('one-dark-pro')}>
+        Theme One Dark Pro
+      </Button>
+      <Button onClick={() => setActiveTheme('dark-modern')}>
+        Theme Dark Modern
+      </Button>
+    </div>
+  );
+}
 
 const sidebarItems: { [propKey in SidebarName]: SidebarItem } = {
   explorer: {
@@ -10,7 +26,7 @@ const sidebarItems: { [propKey in SidebarName]: SidebarItem } = {
   },
   themes: {
     id: 1,
-    Component: () => <h1>Soy el componente temas</h1>,
+    Component: () => <ThemesComponent />,
   },
   settings: {
     id: 2,

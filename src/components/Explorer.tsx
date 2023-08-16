@@ -47,7 +47,7 @@ function Explorer({ pagesObject }: SidebarItemProps) {
               <Link
                 key={key}
                 to={`/${key === 'home' ? '' : key}`}
-                className={`hover:bg-hover-explorer pl-8 ${pathname === `/${key}` || (key === 'home' && pathname === '/') ? 'bg-active-explorer' : ''}`}
+                className={`pl-8 ${pathname === `/${key}` || (key === 'home' && pathname === '/') ? 'bg-active-explorer' : 'hover:bg-hover-explorer'}`}
               >
                 <Box className="flex flex-row items-center gap-1.5">
                   {renderIconExplorer(fileExtension)}

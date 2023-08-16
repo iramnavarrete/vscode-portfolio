@@ -4,7 +4,6 @@ import { ActivityBarItem } from 'types';
 import {
   EmailIcon, PagesIcon, SettingsIcon, ThemeIcon,
 } from '@/components/icons';
-import Theme from '../constants/Theme';
 import { useActiveSidebarContext } from '../context/SidebarContext';
 
 const activityBarTopItems: ActivityBarItem[] = [
@@ -49,14 +48,14 @@ function ActivityBar(): ReactElement {
           placement="right"
           hasArrow
           label={label}
-          bg={Theme.colors.primary}
           border="1px"
-          borderColor={Theme.colors.border}
-          arrowShadowColor={Theme.colors.border}
+          bg="#181818"
+          borderColor="#232424"
+          arrowShadowColor="#232424"
         >
           <Box
             as="button"
-            className={`${activeSidebar === name ? 'bg-active-activity-bar border-l-2 bg-active-activity-bar border-accent' : ''}`}
+            className={`${activeSidebar === name ? 'bg-active-activity-bar-icon-background border-l-2 border-active-activity-bar-icon-accent opacity-100' : 'opacity-50'} hover:opacity-100`}
             onClick={() => setActiveSidebar(name)}
           >
             <div className="flex flex-row justify-center py-2">
@@ -69,7 +68,7 @@ function ActivityBar(): ReactElement {
   );
 
   return (
-    <aside className="flex flex-col justify-between bg-primary min-w-[65px]">
+    <aside className="flex flex-col justify-between bg-activity-bar min-w-[65px]">
       {renderIconsList(activityBarTopItems)}
       {renderIconsList(activityBarBottomItems)}
     </aside>

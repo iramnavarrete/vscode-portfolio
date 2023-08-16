@@ -10,7 +10,7 @@ interface RectButtonProps {
 function RectButton({
   icon: Icon, text, type, to,
 }: RectButtonProps) {
-  const className = 'rect-button bg-gradient-to-r from-[#0066b4] to-[#5c2d91] before:bg-[#181818] border-[1px] border-border';
+  const className = 'rect-button bg-gradient-to-r from-accent-color to-[#5c2d91] before:bg-[#181818] border-[1px] border-accent-color';
 
   const buttonContent = () => (
     <span>

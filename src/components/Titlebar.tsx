@@ -2,9 +2,8 @@ import { Box, Tooltip } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
 import { TitleItem } from 'types';
 import {
-  ExplorerToggleIcon, NavigationArrowIcon, SearchIcon, VSCodeIcon,
+  NavigationArrowIcon, SearchIcon, VSCodeIcon,
 } from '@/components/icons';
-import Theme from '../constants/Theme';
 
 const titleItems: TitleItem[] = [
   { id: 0, text: 'File' },
@@ -17,7 +16,7 @@ const titleItems: TitleItem[] = [
 function TitleBar() {
   const navigate = useNavigate();
   return (
-    <Box className="bg-primary border-b-border border-b-[1px] flex flex-row p-1 text-white">
+    <Box className="bg-header-background border-b-border border-b-[1px] flex flex-row p-1 text-white">
       <Box className="p-1 flex flex-row items-center">
         <VSCodeIcon size={20} />
       </Box>
@@ -25,7 +24,7 @@ function TitleBar() {
         {titleItems.map(({ id, text }) => (
           <p
             key={`titlebar-item-${id}`}
-            className="px-2 cursor-default hover:bg-border rounded-md"
+            className="px-2 cursor-default hover:bg-active-explorer rounded-md"
           >
             {text}
           </p>
@@ -36,10 +35,10 @@ function TitleBar() {
           placement="bottom"
           hasArrow
           label="Go back"
-          bg={Theme.colors.primary}
           border="1px"
-          borderColor={Theme.colors.border}
-          arrowShadowColor={Theme.colors.border}
+          bg="#181818"
+          borderColor="#232424"
+          arrowShadowColor="#232424"
         >
           <Box as="button" onClick={() => navigate(-1)} className="p-1 cursor-default hover:bg-border rounded-md hidden md:block">
             <NavigationArrowIcon size={15} className="rotate-[-90deg]" />
@@ -49,16 +48,16 @@ function TitleBar() {
           placement="bottom"
           hasArrow
           label="Go forward"
-          bg={Theme.colors.primary}
           border="1px"
-          borderColor={Theme.colors.border}
-          arrowShadowColor={Theme.colors.border}
+          bg="#181818"
+          borderColor="#232424"
+          arrowShadowColor="#232424"
         >
           <Box as="button" onClick={() => navigate(1)} className="p-1 cursor-default hover:bg-border rounded-md hidden md:block">
             <NavigationArrowIcon size={15} className="rotate-[90deg]" />
           </Box>
         </Tooltip>
-        <Box className="flex flex-row mr-4 p-[2px] items-center lg:flex-grow lg:basis-0 border-[1px] max-w-[500px] rounded-lg px-4 border-border border bg-searchbar ml-2.5 md:ml-0">
+        <Box className="flex flex-row mr-4 p-[2px] items-center lg:flex-grow lg:basis-0 border-[1px] max-w-[500px] rounded-lg px-4 border-border border bg-search-bar ml-2.5 md:ml-0">
           <Box className="flex flex-row items-center gap-[5px] justify-center text-sm w-full">
             <SearchIcon size={20} className="rotate-90" />
             <p>Iram Navarrete - VS Code Portfolio</p>
@@ -66,20 +65,20 @@ function TitleBar() {
         </Box>
       </Box>
       <Box className="flex flex-row gap-1.5 lg:flex-grow lg:basis-0 justify-end items-center">
-        <Tooltip
+        {/* <Tooltip
           placement="bottom"
           hasArrow
           label="Alternate explorer view"
-          bg={Theme.colors.primary}
+          bg="#181818"
+          borderColor="#232424"
+          arrowShadowColor="#232424"
           border="1px"
           className="hidden lg:block"
-          borderColor={Theme.colors.border}
-          arrowShadowColor={Theme.colors.border}
         >
           <Box as="button" className="mr-2 hidden lg:block">
             <ExplorerToggleIcon size={20} />
           </Box>
-        </Tooltip>
+        </Tooltip> */}
         <Box className="w-4 h-4 rounded-full bg-[#f1fa8c]" />
         <Box className="w-4 h-4 rounded-full bg-[#50fa7b]" />
         <Box className="w-4 h-4 rounded-full bg-[#ff5555]" />
