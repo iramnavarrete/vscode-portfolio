@@ -1,7 +1,7 @@
 /* eslint-disable quote-props */
-import { ThemeObject } from '@/types';
+import { ThemeConfig } from '@/types';
 
-const colors: ThemeObject = {
+const colors: ThemeConfig = {
   'dark-modern': {
     'accent-color': '#0066B4',
     'icon-color': '#8c8c7d',

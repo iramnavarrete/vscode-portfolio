@@ -1,21 +1,15 @@
 import {
-  SidebarItem, SidebarItemProps, SidebarName,
+  SidebarItem, SidebarItemProps, SidebarName, ThemeName,
 } from 'types';
-import { Button } from '@chakra-ui/react';
-import { Explorer } from '@/components';
+import { Explorer, Theme } from '@/components';
 import { useActiveThemeContext } from '@/context/ThemeContext';
+import themesObject from './themesObject';
 
 function ThemesComponent() {
-  const { setActiveTheme } = useActiveThemeContext();
   return (
-    <div>
-      <Button onClick={() => setActiveTheme('one-dark-pro')}>
-        Theme One Dark Pro
-      </Button>
-      <Button onClick={() => setActiveTheme('dark-modern')}>
-        Theme Dark Modern
-      </Button>
-    </div>
+    <section>
+      {Object.keys(themesObject).map((key) => <Theme key={key} name={key} />)}
+    </section>
   );
 }
 

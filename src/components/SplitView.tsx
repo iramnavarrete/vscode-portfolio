@@ -21,11 +21,11 @@ function SplitView() {
       sizes={[20, 80]}
     >
       <Box
-        className="border-l-2 p-4 bg-sidebar-background border-border hidden lg:block text-white min-w-[200px] max-w-[240px] lg:min-w-[300px] lg:max-w-[370px]"
+        className="border-l-2 bg-sidebar-background border-border hidden lg:block text-white w-[350px] min-w-[250px]"
       >
         <SideBarContent />
       </Box>
-      <Box className="flex flex-col flex-1 bg-page-content-background">
+      <Box className="flex flex-col flex-1 bg-page-content-background min-w-[450px]">
         <Tabs pagesObject={pagesObject} />
         <Routes>
           {Object.keys(pagesObject).map((key) => {

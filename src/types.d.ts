@@ -85,7 +85,7 @@ type HEX = `#${string}`;
 type Color = RGB | RGBA | HEX | 'transparent';
 
 /* eslint-disable react/jsx-no-constructed-context-values */
-interface Theme {
+interface ThemeColors {
   'accent-color': Color;
   'icon-color': Color;
   'active-activity-bar-icon-background': Color;
@@ -102,7 +102,17 @@ interface Theme {
   'page-content-background': Color;
   'tabs-background': Color;
   'string': Color;
-  'code' : Color;
+  'code': Color;
 }
 
-export type ThemeObject = { [propKey in ThemeName]: Theme };
+export type ThemeConfig = { [propKey in ThemeName]: ThemeColors };
+
+interface Theme {
+  icon: () => ReactElement;
+  description: string;
+  author: string;
+}
+
+export type ThemeObject = {
+  [propKey in ThemeName]: Theme;
+};

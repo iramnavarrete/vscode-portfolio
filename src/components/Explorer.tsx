@@ -31,33 +31,38 @@ function Explorer({ pagesObject }: SidebarItemProps) {
   };
   return (
     <Box>
-      <Box
-        onClick={() => setShow(!show)}
-        className="flex flex-row items-center text-sm cursor-pointer"
-      >
-        <DownArrowIcon style={style} size={15} />
-        <p className="ml-2">EXPLORER</p>
+      <Box className="flex flex-1 flex-row py-3 pl-7">
+        EXPLORER
       </Box>
-      <Collapse in={show} animateOpacity>
-        <Box className="flex flex-col">
-          {/* Iterate object pages to get list of pages and render all of them */}
-          { pagesObject && Object.keys(pagesObject).map((key) => {
-            const { fileExtension } = pagesObject[key as keyof PagesObject];
-            return (
-              <Link
-                key={key}
-                to={`/${key === 'home' ? '' : key}`}
-                className={`pl-8 ${pathname === `/${key}` || (key === 'home' && pathname === '/') ? 'bg-active-explorer' : 'hover:bg-hover-explorer'}`}
-              >
-                <Box className="flex flex-row items-center gap-1.5">
-                  {renderIconExplorer(fileExtension)}
-                  <p>{`${key}.${fileExtension}`}</p>
-                </Box>
-              </Link>
-            );
-          })}
+      <Box className="px-4">
+        <Box
+          onClick={() => setShow(!show)}
+          className="flex flex-row items-center text-sm cursor-pointer"
+        >
+          <DownArrowIcon style={style} size={15} />
+          <p className="ml-2 font-semibold">PORFOLIO</p>
         </Box>
-      </Collapse>
+        <Collapse in={show} animateOpacity>
+          <Box className="flex flex-col">
+            {/* Iterate object pages to get list of pages and render all of them */}
+            { pagesObject && Object.keys(pagesObject).map((key) => {
+              const { fileExtension } = pagesObject[key as keyof PagesObject];
+              return (
+                <Link
+                  key={key}
+                  to={`/${key === 'home' ? '' : key}`}
+                  className={`pl-8 ${pathname === `/${key}` || (key === 'home' && pathname === '/') ? 'bg-active-explorer' : 'hover:bg-hover-explorer'}`}
+                >
+                  <Box className="flex flex-row items-center gap-1.5">
+                    {renderIconExplorer(fileExtension)}
+                    <p>{`${key}.${fileExtension}`}</p>
+                  </Box>
+                </Link>
+              );
+            })}
+          </Box>
+        </Collapse>
+      </Box>
     </Box>
   );
 }
