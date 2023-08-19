@@ -20,6 +20,7 @@ const colors: ThemeConfig = {
     'tabs-background': '#181818',
     'string': '#ce916a',
     'code': '#cccccc',
+    'accent-secondary': '#4cc61e',
   },
   'one-dark-pro': {
     'accent-color': '#4d78cc',
@@ -39,6 +40,7 @@ const colors: ThemeConfig = {
     'tabs-background': '#21252b',
     'string': '#98c371',
     'code': '#abb2bf',
+    'accent-secondary': '#3fb911',
   },
 };
 

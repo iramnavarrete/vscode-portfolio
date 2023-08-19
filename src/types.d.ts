@@ -87,6 +87,7 @@ type Color = RGB | RGBA | HEX | 'transparent';
 /* eslint-disable react/jsx-no-constructed-context-values */
 interface ThemeColors {
   'accent-color': Color;
+  'accent-secondary': Color;
   'icon-color': Color;
   'active-activity-bar-icon-background': Color;
   'active-activity-bar-icon-accent': Color;
@@ -108,9 +109,10 @@ interface ThemeColors {
 export type ThemeConfig = { [propKey in ThemeName]: ThemeColors };
 
 interface Theme {
-  icon: () => ReactElement;
+  icon: ({ size }: { size: number }) => ReactElement;
   description: string;
   author: string;
+  name: string;
 }
 
 export type ThemeObject = {

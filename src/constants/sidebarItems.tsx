@@ -1,14 +1,17 @@
 import {
-  SidebarItem, SidebarItemProps, SidebarName, ThemeName,
+  SidebarItem, SidebarItemProps, SidebarName,
 } from 'types';
+import { Box } from '@chakra-ui/react';
 import { Explorer, Theme } from '@/components';
-import { useActiveThemeContext } from '@/context/ThemeContext';
 import themesObject from './themesObject';
 
 function ThemesComponent() {
   return (
     <section>
-      {Object.keys(themesObject).map((key) => <Theme key={key} name={key} />)}
+      <Box className="flex flex-1 flex-row py-3 pl-7">
+        THEMES
+      </Box>
+      {Object.keys(themesObject).map((id) => <Theme key={id} id={id} />)}
     </section>
   );
 }

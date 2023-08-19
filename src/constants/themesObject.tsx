@@ -5,12 +5,14 @@ const themesObject: ThemeObject = {
   'one-dark-pro': {
     author: 'binaryify',
     description: "Atom's iconic One Dark theme for Visual Studio Code",
-    icon: () => <OneDarkProIcon size={50} />,
+    icon: ({ size }) => <OneDarkProIcon size={size} />,
+    name: 'One Dark Pro',
   },
   'dark-modern': {
     author: 'Microsoft',
-    description: 'Tema oscuro moderno de los temas por defecto de VS Code',
-    icon: () => <ThemePalleteIcon size={50} />,
+    description: "Dark Modern theme, it's part of VS Code default themes",
+    icon: ({ size }) => <ThemePalleteIcon size={size} />,
+    name: 'Dark Modern',
   },
 };
 
